@@ -2,7 +2,7 @@
 string welcomeMessage = "Welcome to HarmonySounds !!"; //Camel Case In String
 
 
-void LetWelcomeMessage()// In C#, the void modifier is used to indicate that a function does not return any value. This means that we want to execute a block of code, but we do not expect to receive anything back as a result of the function's execution.
+void DisplayLogo()// In C#, the void modifier is used to indicate that a function does not return any value. This means that we want to execute a block of code, but we do not expect to receive anything back as a result of the function's execution.
 {
     Console.WriteLine(@"
     ＨａｒｍｏｎｙＳｏｕｎｄｓ
@@ -22,15 +22,36 @@ void MenuOptions()
     string selectOption = Console.ReadLine()!;//! the statement demonstrates that we are not working with null values.
     int selectOptionNumeric = int.Parse(selectOption);  //int.Parse convert to int
 
-    if (selectOptionNumeric == 1);
+    switch (selectOptionNumeric)
     {
-        Console.WriteLine("You entered the option "+ selectOption);
+        case 1: RegisterBands();
+            break;
+        case 2: Console.WriteLine("You entered the option: "+ selectOptionNumeric );
+            break;
+        case 3: Console.WriteLine("You entered the option: "+ selectOptionNumeric );
+            break;
+        case 4: Console.WriteLine("You entered the option: "+ selectOptionNumeric );
+            break;
+        case -1: Console.WriteLine("You entered the option exit: Good Bye");
+            break;
+        default: Console.WriteLine("Invalid option");
+        break;
     }
 
 
 }
 
-
+void RegisterBands()
+{
+    Console.Clear();
+    Console.WriteLine("Register Bands");
+    Console.Write("Enter the name of the band you want to register: ");
+    string nameBand = Console.ReadLine()!; //! is called the null-forgiving operator. It tells the compiler that you are certain that the expression to which it is applied will never evaluate to null.
+    Console.WriteLine($"The band {nameBand} has been registered"); //$ string interpolation
+    Thread.Sleep(2000); //This line of code is often used to introduce a delay in a program's execution
+    Console.Clear();
+    MenuOptions();
+}
 
 LetWelcomeMessage();
 MenuOptions();
