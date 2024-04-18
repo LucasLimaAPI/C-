@@ -1,6 +1,6 @@
 ﻿// Harmony Sounds
 string welcomeMessage = "Welcome to HarmonySounds !!"; //Camel Case In String
-
+List<string> ListBand = new List<string>();//Creating and instance list in c#
 
 void DisplayLogo()// In C#, the void modifier is used to indicate that a function does not return any value. This means that we want to execute a block of code, but we do not expect to receive anything back as a result of the function's execution.
 {
@@ -26,7 +26,7 @@ void MenuOptions()
     {
         case 1: RegisterBands();
             break;
-        case 2: Console.WriteLine("You entered the option: "+ selectOptionNumeric );
+        case 2: ShowBandsRegister();
             break;
         case 3: Console.WriteLine("You entered the option: "+ selectOptionNumeric );
             break;
@@ -44,14 +44,44 @@ void MenuOptions()
 void RegisterBands()
 {
     Console.Clear();
-    Console.WriteLine("Register Bands");
+    ShowOptionTitle("Register Bands");
     Console.Write("Enter the name of the band you want to register: ");
     string nameBand = Console.ReadLine()!; //! is called the null-forgiving operator. It tells the compiler that you are certain that the expression to which it is applied will never evaluate to null.
+    ListBand.Add(nameBand);// Registering Bands
     Console.WriteLine($"The band {nameBand} has been registered"); //$ string interpolation
     Thread.Sleep(2000); //This line of code is often used to introduce a delay in a program's execution
     Console.Clear();
     MenuOptions();
 }
 
-LetWelcomeMessage();
+void ShowBandsRegister()
+{
+    Console.Clear();
+    ShowOptionTitle("Show Bands");
+
+    foreach (string band in ListBand) //foreach is a looping construct used to iterate over elements in a collection or array.
+    {
+        Console.WriteLine("Band: "+ band);
+    }
+
+    //for (int i = 0; i < ListBand.Count; i++)
+    //{
+    //    Console.WriteLine($"Band: {ListBand[i]}");
+    //}
+
+    Console.WriteLine("\nEnter any key to return to the menu ");
+    Console.ReadKey(); // 
+    Console.Clear();
+    MenuOptions();
+}
+
+void ShowOptionTitle(string title) // Creanting a default design if our consuting any numbers in the app.
+{
+    int WordsQuant = title.Length;// Length property is commonly used to get the number of elements in an array or the number of characters in a string. It's a built-in property for arrays, strings, and other collections in .NET.
+    string asterix  = string.Empty.PadLeft(WordsQuant,'*');
+    Console.WriteLine(asterix);
+    Console.WriteLine(title);
+    Console.WriteLine(asterix + "\n");
+}
+
 MenuOptions();
