@@ -1,6 +1,9 @@
 ﻿// Harmony Sounds
 string welcomeMessage = "Welcome to HarmonySounds !!"; //Camel Case In String
-List<string> ListBand = new List<string>();//Creating and instance list in c#
+//List<string> ListBand = new List<string>();//Creating and instance list in c#
+
+Dictionary<string, List<int>> RegisteredBands = new Dictionary <string, List<int>>();//Creating a empty dictionary
+
 
 void DisplayLogo()// In C#, the void modifier is used to indicate that a function does not return any value. This means that we want to execute a block of code, but we do not expect to receive anything back as a result of the function's execution.
 {
@@ -28,7 +31,7 @@ void MenuOptions()
             break;
         case 2: ShowBandsRegister();
             break;
-        case 3: Console.WriteLine("You entered the option: "+ selectOptionNumeric );
+        case 3: ToAssessBand();
             break;
         case 4: Console.WriteLine("You entered the option: "+ selectOptionNumeric );
             break;
@@ -47,7 +50,8 @@ void RegisterBands()
     ShowOptionTitle("Register Bands");
     Console.Write("Enter the name of the band you want to register: ");
     string nameBand = Console.ReadLine()!; //! is called the null-forgiving operator. It tells the compiler that you are certain that the expression to which it is applied will never evaluate to null.
-    ListBand.Add(nameBand);// Registering Bands
+    RegisteredBands.Add(nameBand, new List<int>());
+   // ListBand.Add(nameBand);// Registering Bands
     Console.WriteLine($"The band {nameBand} has been registered"); //$ string interpolation
     Thread.Sleep(2000); //This line of code is often used to introduce a delay in a program's execution
     Console.Clear();
@@ -59,7 +63,7 @@ void ShowBandsRegister()
     Console.Clear();
     ShowOptionTitle("Show Bands");
 
-    foreach (string band in ListBand) //foreach is a looping construct used to iterate over elements in a collection or array.
+    foreach (string band in RegisteredBands.Keys) //foreach is a looping construct used to iterate over elements in a collection or array, and .Keys return dictionary Keys
     {
         Console.WriteLine("Band: "+ band);
     }
@@ -82,6 +86,37 @@ void ShowOptionTitle(string title) // Creanting a default design if our consutin
     Console.WriteLine(asterix);
     Console.WriteLine(title);
     Console.WriteLine(asterix + "\n");
+}
+
+
+void ToAssessBand()
+{
+    //Enter which band you wish evaluate
+    // if band exists on dictionary >> to assign note
+    // else , return to menu.
+
+    Console.Clear();
+    ShowOptionTitle("Evaluate Band");
+    Console.Write("Enter the Band if You need to Evaluate: ");
+    string nameBand = Console.ReadLine()!;
+    if (RegisteredBands.ContainsKey(nameBand))
+    {
+        Console.WriteLine($"What rating does the band {nameBand} deserve?");
+        int rate = int.Parse(Console.ReadLine()!);
+        RegisteredBands[nameBand].Add(rate);
+        Console.WriteLine($"\nThe Rate {rate} was registered successfully");
+        Thread.Sleep(2000); //This function wait 2 seconds 
+        Console.Clear(); 
+        MenuOptions();
+    } else
+    {
+        Console.WriteLine($"The band {nameBand} is not found");
+        Console.WriteLine("Enter any Key to return the main menu ");
+        Console.ReadKey();
+        Console.Clear();
+        MenuOptions();
+    }
+
 }
 
 MenuOptions();
