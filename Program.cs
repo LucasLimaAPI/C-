@@ -33,7 +33,7 @@ void MenuOptions()
             break;
         case 3: ToAssessBand();
             break;
-        case 4: Console.WriteLine("You entered the option: "+ selectOptionNumeric );
+        case 4: Averagecalc();
             break;
         case -1: Console.WriteLine("You entered the option exit: Good Bye");
             break;
@@ -89,6 +89,35 @@ void ShowOptionTitle(string title) // Creanting a default design if our consutin
 }
 
 
+void Averagecalc()
+{
+    Console.Clear();
+    ShowOptionTitle("Display the average of a band");
+    Console.Write($"\nWhich band do you want to see the average? ");
+    string nameBand = Console.ReadLine()!;
+
+    if (RegisteredBands.ContainsKey(nameBand))
+    {
+       List<int> ratings = RegisteredBands[nameBand];
+        Console.WriteLine($"The average rating of band {nameBand} is: {ratings.Average()}");
+        Console.WriteLine("Enter any key to return to main menu");
+        Console.ReadKey();
+        Console.Clear();
+        MenuOptions();
+    } else
+    {
+        Console.WriteLine($"The band {nameBand} is not found");
+        Console.WriteLine("Enter any Key to return the main menu ");
+        Console.ReadKey();
+        Console.Clear();
+        MenuOptions();
+
+    }
+
+
+}
+
+
 void ToAssessBand()
 {
     //Enter which band you wish evaluate
@@ -116,6 +145,7 @@ void ToAssessBand()
         Console.Clear();
         MenuOptions();
     }
+
 
 }
 
