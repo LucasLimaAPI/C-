@@ -1,0 +1,15 @@
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\Release\net8.0\HarmonySounds.exe
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\Release\net8.0\HarmonySounds.deps.json
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\Release\net8.0\HarmonySounds.runtimeconfig.json
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\Release\net8.0\HarmonySounds.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\Release\net8.0\HarmonySounds.pdb
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.AssemblyInfoInputs.cache
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.AssemblyInfo.cs
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.csproj.CoreCompileInputs.cache
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.sourcelink.json
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\refint\HarmonySounds.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.pdb
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.genruntimeconfig.cache
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\ref\HarmonySounds.dll
