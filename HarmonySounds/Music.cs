@@ -7,8 +7,15 @@
 
 class Music
 {
+
+    public Music(Band artist, string name)//Constructor By creating this way we can avoid creating an instance of a song without a band
+    {
+        Name = name;
+        Artist = artist;
+    }
+
     public string Name{get; set;} 
-    public string Artist {get; set;}
+    public Band Artist {get;}// tirando metodo de atribuicao set
     public int Duration {get; set;}
     public bool Available{get; set;} //private method security
    // public void AnswerAvailable(bool value)//set
@@ -29,7 +36,7 @@ class Music
     public void ShowDataSheet() // "void" Método que não tem retorno
         {
             System.Console.WriteLine($"Name: {Name}");
-            System.Console.WriteLine($"Artist: {Artist}");
+            System.Console.WriteLine($"Artist: {Artist.Name}");
             System.Console.WriteLine($"Duration: {Duration}");
             
             if (Available)

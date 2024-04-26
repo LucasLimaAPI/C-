@@ -1,28 +1,25 @@
-﻿Music music1 = new Music();// create an specific object for music.
+﻿Band ironmaiden = new Band("Iron Maiden");
 
-music1.Name = "The Unforgiven";
-music1.Artist= "Metallica";
-music1.Duration = 250;
-music1.Available = true;
-System.Console.WriteLine(music1.ResumDescription);
+Album IronMaidenAlbum = new Album("Fear of the Dark");
 
+Music music1 = new Music(ironmaiden,"Childhood's End")
+{
+    Duration = 265,
+    Available = true,
+};
 
-music1.ShowDataSheet();
-
-Console.WriteLine($"Name of music: {music1.Name}");
-Console.WriteLine($"Artist name: {music1.Artist}");
-
-
-Music music2 = new Music();
-music2.Name = "Otherside";
-music2.Artist = "RHCP";
-music2.Duration = 156;
-music2.Available = false;
+Music music2 = new Music(ironmaiden,"Fear Of the Dark")
+{
+    Duration = 421,
+    Available = false,
+};
 
 
-
-Console.WriteLine($"Name of music: {music2.Name}");
-Console.WriteLine($"Artist name: {music2.Artist}");
+IronMaidenAlbum.AddMusic(music1);
+IronMaidenAlbum.AddMusic(music2);
+ironmaiden.AddAlbum(IronMaidenAlbum);
 
 music1.ShowDataSheet();
 music2.ShowDataSheet();
+IronMaidenAlbum.ShowAlbumMusics();    
+ironmaiden.ShowDiscografy();
