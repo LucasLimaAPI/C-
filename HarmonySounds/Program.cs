@@ -1,14 +1,15 @@
-﻿Band ironmaiden = new Band("Iron Maiden");
+﻿using HarmonySounds;
+Band ironmaiden = new("Iron Maiden");
 
-Album IronMaidenAlbum = new Album("Fear of the Dark");
+Album IronMaidenAlbum = new("Fear of the Dark");
 
-Music music1 = new Music(ironmaiden,"Childhood's End")
+Music music1 = new(ironmaiden,"Childhood's End")
 {
     Duration = 265,
     Available = true,
 };
 
-Music music2 = new Music(ironmaiden,"Fear Of the Dark")
+Music music2 = new(ironmaiden,"Fear Of the Dark")
 {
     Duration = 421,
     Available = false,
@@ -23,3 +24,30 @@ music1.ShowDataSheet();
 music2.ShowDataSheet();
 IronMaidenAlbum.ShowAlbumMusics();    
 ironmaiden.ShowDiscografy();
+
+
+
+
+Podcast FlowPodpa = new("FlowPodpa");
+Maraton FlowPodpamaraton = new("Canal Aberto");
+Episode episode1 = new(FlowPodpa,"Recebendo Igor Gioberto")
+{
+    Duration = 5400,
+    Available=true,
+};
+Episode episode2 = new(FlowPodpa,"Canoa d'eriva")
+{
+    Duration = 6000,
+    Available= false
+
+};
+
+FlowPodpamaraton.AddEps(episode1);
+FlowPodpamaraton.AddEps(episode2);
+FlowPodpa.AddMaraton(FlowPodpamaraton);
+
+
+episode1.ShowEpInfo();
+episode2.ShowEpInfo();
+FlowPodpamaraton.ShowMaratonEps();
+FlowPodpa.ShowMaratonRelation();

@@ -1,30 +1,28 @@
-class Album
+namespace HarmonySounds
 {
-    private List<Music> musics = new List<Music>();
-
-    public Album(string name)
+    public class Album(string name)
     {
-        Name = name;
-    }
+        private readonly List<Music> musics = [];
 
-    public string Name { get;}
-    
-    public int TotalDuration => musics.Sum(m => m.Duration );
+        public string Name { get; } = name;
 
-    public void AddMusic(Music music)
-    {
-        musics.Add(music);
-    }
+        public int TotalDuration => musics.Sum(m => m.Duration);
 
-
-    public void ShowAlbumMusics()
-    {
-        System.Console.WriteLine($"List of Album Musics {Name}\n");
-        foreach (var music in musics)
+        public void AddMusic(Music music)
         {
-            System.Console.WriteLine($"Music: {music.Name}");
+            musics.Add(music);
         }
-        System.Console.WriteLine($"\nThe Total Durantion of Album is: {TotalDuration}");
-    }
 
+
+        public void ShowAlbumMusics()
+        {
+            Console.WriteLine($"List of Album Musics {Name}\n");
+            foreach (var music in musics)
+            {
+                Console.WriteLine($"Music: {music.Name}");
+            }
+            Console.WriteLine($"\nThe Total Durantion of Album is: {TotalDuration}");
+        }
+
+    }
 }

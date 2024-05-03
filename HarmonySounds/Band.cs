@@ -1,15 +1,10 @@
-using System.Data.SqlTypes;
+using HarmonySounds;
 
-class Band
+public class Band(string name)
 {
-    private List<Album> albums = new List<Album>();
+    private readonly List<Album> albums = [];
 
-    public Band(string name) // "ctor" constructor call
-    {
-        Name = name;
-    }
- 
-    public string Name { get;}
+    public string Name { get; } = name;
 
     public void AddAlbum(Album album)
     {
