@@ -1,6 +1,13 @@
-﻿﻿Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
-bandasRegistradas.Add("Linkin Park", new List<int> { 10, 8, 6 });
-bandasRegistradas.Add("The Beatles", new List<int>());
+﻿﻿using HarmonySounds.Modelos;
+
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+
+
+Band ira = new Band("Ira!");
+ira.AddNotes(new Evaluation(10));
+ira.AddNotes(new Evaluation(4));
+ira.AddNotes(new Evaluation(7));  
+
 
 void ExibirLogo()
 {
@@ -121,10 +128,11 @@ void AvaliarUmaBanda()
     string nomeDaBanda = Console.ReadLine()!;
     if (bandasRegistradas.ContainsKey(nomeDaBanda))
     {
+        Band banda= bandasRegistradas[nomeDaBanda];    
         Console.Write($"Qual a nota que a banda {nomeDaBanda} merece: ");
-        int nota = int.Parse(Console.ReadLine()!);
-        bandasRegistradas[nomeDaBanda].Add(nota);
-        Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeDaBanda}");
+        Evaluation nota = Evaluation.Parse(Console.ReadLine()!);
+        banda.AddNotes(nota);
+        Console.WriteLine($"\nA nota {nota.Note} foi registrada com sucesso para a banda {nomeDaBanda}");
         Thread.Sleep(2000);
         Console.Clear();
         ExibirOpcoesDoMenu();

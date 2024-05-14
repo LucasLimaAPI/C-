@@ -1,10 +1,10 @@
 
 namespace HarmonySounds.Modelos;
 
-class Band
+internal class Band
 {
     private List<Album> albuns = new();
-    private List<int> notes = new();
+    private List<Evaluation> notes = new List<Evaluation>();
 
     public Band(string name)
     {
@@ -12,7 +12,16 @@ class Band
     }
 
     public string Name { get; }
-    public double Media => notes.Average();
+    public double Media
+    {
+        get 
+        { 
+            if (notes.Count == 0) return 0;
+            else return  notes.Average(e => e.Note);
+
+        }
+
+    }
     public List<Album> Albuns => albuns;
 
     public void AddAlbum(Album album) 
@@ -20,7 +29,7 @@ class Band
         albuns.Add(album);
     }
 
-    public void AddNotes(int nota)
+    public void AddNotes(Evaluation nota)
     {
         notes.Add(nota);
     }
@@ -34,8 +43,5 @@ class Band
         }
     }
 
-    public static implicit operator Band(List<int> v)
-    {
-        throw new NotImplementedException();
-    }
+
 }
