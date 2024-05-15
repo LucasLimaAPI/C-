@@ -1,5 +1,7 @@
 
 
+
+
 namespace HarmonySounds.Modelos;
 
 internal class Band
@@ -45,6 +47,16 @@ internal class Band
     }
 
     public static implicit operator Band(List<int> v)
+    {
+        Band band = new Band("NovaBanda"); // Nome da banda temporário
+        foreach (int note in v)
+        {
+            band.AddNotes(note); // Adiciona cada nota da lista à banda
+        }
+        return band;
+}
+
+    private void AddNotes(int note)
     {
         throw new NotImplementedException();
     }
