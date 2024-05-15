@@ -1,10 +1,11 @@
 
+
 namespace HarmonySounds.Modelos;
 
 internal class Band
 {
-    private List<Album> albuns = new();
-    private List<Evaluation> notes = new List<Evaluation>();
+    private readonly List<Album> albuns = [];
+    private readonly List<Evaluation> notes = [];
 
     public Band(string name)
     {
@@ -43,5 +44,8 @@ internal class Band
         }
     }
 
-
+    public static implicit operator Band(List<int> v)
+    {
+        throw new NotImplementedException();
+    }
 }

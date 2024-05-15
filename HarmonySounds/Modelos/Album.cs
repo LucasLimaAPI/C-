@@ -2,7 +2,7 @@ namespace HarmonySounds.Modelos;
 
 class Album
 {
-    private List<Music> musics = new();
+    private readonly List<Music> musics = [];
 
     public Album(string name)
     {

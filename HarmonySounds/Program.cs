@@ -1,6 +1,6 @@
 ﻿﻿using HarmonySounds.Modelos;
 
-Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+Dictionary<string, List<int>> bandasRegistradas = [];
 
 
 Band ira = new Band("Ira!");
@@ -87,7 +87,7 @@ void RegistrarBanda()
     ExibirTituloDaOpcao("Registro das bandas");
     Console.Write("Digite o nome da banda que deseja registrar: ");
     string nomeDaBanda = Console.ReadLine()!;
-    bandasRegistradas.Add(nomeDaBanda, new List<int>());
+    bandasRegistradas.Add(nomeDaBanda, []);
     Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(4000);
     Console.Clear();
@@ -126,9 +126,9 @@ void AvaliarUmaBanda()
     ExibirTituloDaOpcao("Avaliar banda");
     Console.Write("Digite o nome da banda que deseja avaliar: ");
     string nomeDaBanda = Console.ReadLine()!;
-    if (bandasRegistradas.ContainsKey(nomeDaBanda))
+    if (bandasRegistradas.TryGetValue(nomeDaBanda, out List<int>? value))
     {
-        Band banda= bandasRegistradas[nomeDaBanda];    
+        Band banda= value;    
         Console.Write($"Qual a nota que a banda {nomeDaBanda} merece: ");
         Evaluation nota = Evaluation.Parse(Console.ReadLine()!);
         banda.AddNotes(nota);
@@ -154,9 +154,9 @@ void ExibirDetalhes()
     ExibirTituloDaOpcao("Exibir detalhes da banda");
     Console.Write("Digite o nome da banda que deseja conhecer melhor: ");
     string nomeDaBanda = Console.ReadLine()!;
-    if (bandasRegistradas.ContainsKey(nomeDaBanda))
+    if (bandasRegistradas.TryGetValue(nomeDaBanda, out List<int>? value))
     {
-        List<int> notasDaBanda = bandasRegistradas[nomeDaBanda];
+        List<int> notasDaBanda = value;
         Console.WriteLine($"\nA média da banda {nomeDaBanda} é {notasDaBanda.Average()}.");
         /**
         * ESPAÇO RESERVADO PARA COMPLETAR A FUNÇÃO
