@@ -14,10 +14,7 @@ internal class Evaluation
         int nota = int.Parse(text);
         return new Evaluation(nota);
     }
-
-
 }
-
 
 
 

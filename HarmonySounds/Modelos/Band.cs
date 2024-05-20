@@ -1,63 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-
-
-
-namespace HarmonySounds.Modelos;
-
-internal class Band
+namespace HarmonySounds.Modelos
 {
-    private readonly List<Album> albuns = [];
-    private readonly List<Evaluation> notes = [];
-
-    public Band(string name)
+    internal class Band
     {
-        Name = name;
-    }
+        private readonly List<Album> albuns = new List<Album>();
+        private readonly List<Evaluation> notes = new List<Evaluation>();
 
-    public string Name { get; }
-    public double Media
-    {
-        get 
-        { 
-            if (notes.Count == 0) return 0;
-            else return  notes.Average(e => e.Note);
-
-        }
-
-    }
-    public List<Album> Albuns => albuns;
-
-    public void AddAlbum(Album album) 
-    { 
-        albuns.Add(album);
-    }
-
-    public void AddNotes(Evaluation nota)
-    {
-        notes.Add(nota);
-    }
-
-    public void ShowDiscografy()
-    {
-        Console.WriteLine($"Discografia da banda {Name}");
-        foreach (Album album in albuns)
+        public Band(string name)
         {
-            Console.WriteLine($"Álbum: {album.Name} ({album.TotalDuration})");
+            Name = name;
         }
-    }
 
-    public static implicit operator Band(List<int> v)
-    {
-        Band band = new Band("NovaBanda"); // Nome da banda temporário
-        foreach (int note in v)
+        public string Name { get; }
+        
+        public double Media
         {
-            band.AddNotes(note); // Adiciona cada nota da lista à banda
+            get
+            {
+                if (notes.Count == 0) return 0;
+                else return notes.Average(e => e.Note);
+            }
         }
-        return band;
-}
 
-    private void AddNotes(int note)
-    {
-        throw new NotImplementedException();
+        public List<Album> Albuns => albuns;
+
+        public List<Evaluation> Notas => notes;
+
+        public void AdicionarNota(Evaluation avaliacao)
+        {
+            notes.Add(avaliacao);
+        }
+
+        public void AddAlbum(Album album)
+        {
+            albuns.Add(album);
+        }
+
+        public void ShowDiscografy()
+        {
+            Console.WriteLine($"Discografia da banda {Name}");
+            foreach (Album album in albuns)
+            {
+                Console.WriteLine($"Álbum: {album.Name} ({album.TotalDuration})");
+            }
+        }
     }
 }
