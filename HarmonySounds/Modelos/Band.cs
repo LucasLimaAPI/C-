@@ -1,13 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 namespace HarmonySounds.Modelos
 {
     internal class Band
     {
-        private readonly List<Album> albuns = new List<Album>();
-        private readonly List<Evaluation> notes = new List<Evaluation>();
+        private readonly List<Album> albuns = new();
+        private readonly List<Evaluation> notes = new();
 
         public Band(string name)
         {

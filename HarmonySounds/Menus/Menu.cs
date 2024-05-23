@@ -1,8 +1,11 @@
+using HarmonySounds.Modelos;
+
 namespace HarmonySounds.Menus;
 
-internal class Menu
+internal abstract class Menu
 {
-    public void ExibirTituloDaOpcao(string titulo)
+    public abstract void Executar(Dictionary<string, Band> bandasRegistradas);
+    public static void ExibirTituloDaOpcao(string titulo)
     {
         int quantidadeDeLetras = titulo.Length;
         string asteriscos = string.Empty.PadLeft(quantidadeDeLetras, '*');

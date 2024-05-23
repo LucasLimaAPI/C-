@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HarmonySounds")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95a513287dac3f37de845843dbf80cc979395296")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32ed587554eec555be1e8e8905d88ebbfd25df18")]
 [assembly: System.Reflection.AssemblyProductAttribute("HarmonySounds")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HarmonySounds")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

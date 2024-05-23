@@ -1,21 +1,19 @@
 using HarmonySounds.Modelos;
-using System;
-using System.Collections.Generic;
 
 namespace HarmonySounds.Menus
 {
     internal class MenuAvaliarBanda : Menu
     {
-        public void Executar(Dictionary<string, Band> bandasRegistradas)
+        public override void Executar(Dictionary<string, Band> bandasRegistradas)
         {
             Console.Clear();
             ExibirTituloDaOpcao("Avaliar uma banda");
             Console.Write("Digite o nome da banda que deseja avaliar: ");
             string nomeDaBanda = Console.ReadLine()!;
             
-            if (bandasRegistradas.ContainsKey(nomeDaBanda))
+            if (bandasRegistradas.TryGetValue(nomeDaBanda, out Band? value))
             {
-                Band banda = bandasRegistradas[nomeDaBanda];
+                Band banda = value;
                 
                 Console.Write("Digite a nota para a banda: ");
                 int nota = int.Parse(Console.ReadLine()!);

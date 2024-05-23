@@ -1,22 +1,19 @@
 using HarmonySounds.Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace HarmonySounds.Menus
 {
     internal class MenuExibirDetalhes : Menu
     {
-        public void Executar(Dictionary<string, Band> bandasRegistradas)
+        public override void Executar(Dictionary<string, Band> bandasRegistradas)
         {
             Console.Clear();
             ExibirTituloDaOpcao("Exibir detalhes da banda");
             Console.Write("Digite o nome da banda que deseja conhecer melhor: ");
             string nomeDaBanda = Console.ReadLine()!;
             
-            if (bandasRegistradas.ContainsKey(nomeDaBanda))
+            if (bandasRegistradas.TryGetValue(nomeDaBanda, out Band? value))
             {
-                Band banda = bandasRegistradas[nomeDaBanda];
+                Band banda = value;
                 List<Evaluation> notasDaBanda = banda.Notas; // Assuming Notas is the property containing the list of evaluations
                 if (notasDaBanda != null && notasDaBanda.Count > 0)
                 {

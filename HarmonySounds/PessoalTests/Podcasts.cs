@@ -11,10 +11,10 @@ public  class Podcast(string name)
     }
     public void ShowMaratonRelation()
     {
-        System.Console.WriteLine($"Maraton Relation {Name}");
+        Console.WriteLine($"Maraton Relation {Name}");
         foreach (Maraton maraton in maratons)
         {
-            System.Console.WriteLine($"Maraton: {maraton.Name} ({maraton.TotalDuration})");
+            Console.WriteLine($"Maraton: {maraton.Name} ({maraton.TotalDuration})");
         }
 
     }
