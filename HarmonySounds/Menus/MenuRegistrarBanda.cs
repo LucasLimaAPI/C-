@@ -1,7 +1,7 @@
 using HarmonySounds.Menus;
 namespace HarmonySounds.Modelos
 {
-    internal class MenuRegistrarBanda : Menu
+    internal class MenuRegistrarBanda : Menu //Neste estamos herdando a classe menu e não instanciando por isso foi foi possivel o uso dela.
     {
         public override void Executar(Dictionary<string, Band> bandasRegistradas)
         {
