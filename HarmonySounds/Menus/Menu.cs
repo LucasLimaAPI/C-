@@ -2,9 +2,8 @@ using HarmonySounds.Modelos;
 
 namespace HarmonySounds.Menus;
 
-internal abstract class Menu // Classe abstract ela não pode ser instanciada mas pode ser herdada.
+internal class Menu // Classe abstract ela não pode ser instanciada mas pode ser herdada.
 {
-    public abstract void Executar(Dictionary<string, Band> bandasRegistradas);
     public static void ExibirTituloDaOpcao(string titulo)
     {
         int quantidadeDeLetras = titulo.Length;
@@ -14,8 +13,9 @@ internal abstract class Menu // Classe abstract ela não pode ser instanciada ma
         Console.WriteLine(asteriscos + "\n");
     }
 
-    public override void Executar(Dictionary<string, Band> bandasRegistradas)
+    public virtual void Executar(Dictionary<string, Band> bandasRegistradas)
     {
-        
+        Console.Clear();
+
     }
 }

@@ -5,9 +5,9 @@ namespace HarmonySounds.Modelos
     internal class MenuRegistrarAlbum : Menu
     {
 
-        public override void Executar(Dictionary<string, Band> bandasRegistradas)
+        public override void Executar(Dictionary<string, Band> bandasRegistradas) //Sobrescrever o metodo exexcutar utilizando o metodo "override"
         {
-            Console.Clear();
+            base.Executar(bandasRegistradas);
             ExibirTituloDaOpcao("Exibindo todas as bandas registradas na nossa aplicação");
             foreach (string banda in bandasRegistradas.Keys)
             {
@@ -20,9 +20,4 @@ namespace HarmonySounds.Modelos
         }
 
     }
-
-
-
-
-
 }
