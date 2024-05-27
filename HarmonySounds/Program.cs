@@ -74,7 +74,6 @@ namespace HarmonySounds.Menus
                         Console.WriteLine("Opção inválida");
                         return;
                 }
-                menu.Executar(bandasRegistradas);
                 ExibirOpcoesDoMenu();
             }
             ExibirOpcoesDoMenu();

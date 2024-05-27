@@ -14,5 +14,8 @@ internal abstract class Menu // Classe abstract ela não pode ser instanciada ma
         Console.WriteLine(asteriscos + "\n");
     }
 
-
+    public override void Executar(Dictionary<string, Band> bandasRegistradas)
+    {
+        
+    }
 }
