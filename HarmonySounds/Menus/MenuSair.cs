@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using HarmonySounds.Menus;
 using HarmonySounds.Modelos;
 
@@ -10,5 +11,7 @@ internal class MenuSair : Menu
         {
             base.Executar(bandasRegistradas);
             System.Console.WriteLine("Voce Escolheu Sair! ");
+            Environment.Exit(0); 
+            Console.Clear(); 
         }
 }
