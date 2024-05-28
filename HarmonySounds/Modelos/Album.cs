@@ -1,21 +1,31 @@
 namespace HarmonySounds.Modelos;
 
-class Album
+internal class Album(string name) : IAvaliavel
 {
     private readonly List<Music> musics = [];
+    private readonly List< Evaluation> notas = [];
 
-    public Album(string name)
-    {
-        Name = name;
-    }
-
-    public string Name { get; }
+    public string Name { get; } = name;
     public int TotalDuration => musics.Sum(m => m.Duration);
     public List<Music> Musicas => musics;
+    
+     public double Media
+    { 
+        get
+        {
+            if (notas.Count == 0) return 0;
+            else return notas.Average(m => m.Note);
+        }
+    }
 
     public void AddMusic(Music musica)
     {
         musics.Add(musica);
+    }
+
+    public void AdicionarNota(Evaluation nota)
+    {
+        notas.Add(nota);
     }
 
     public void ShowAlbumMusic()

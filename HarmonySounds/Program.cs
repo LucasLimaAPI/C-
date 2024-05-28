@@ -1,24 +1,30 @@
-﻿using System.Globalization;
+﻿using HarmonySounds;
+using HarmonySounds.Menus;
 using HarmonySounds.Modelos;
 
-namespace HarmonySounds.Menus
+Dictionary<string, Band> bandasRegistradas = [];
+
+Band ira = new("Ira!");
+ira.AdicionarNota(new Evaluation(10));
+ira.AdicionarNota(new Evaluation(4));
+ira.AdicionarNota(new Evaluation(7));
+
+bandasRegistradas.Add(ira.Name, ira);
+
+Dictionary<int, Menu> opcoes = new()
 {
-    internal class Program
-    {
-        private static void Main(string[] args)
-        {
-            Dictionary<string, Band> bandasRegistradas = new();
+    { 1, new MenuRegistrarBanda() },
+    { 2, new MenuMostrarBandasResgistradas() },
+    { 3, new MenuRegistrarAlbum() },
+    { 4, new MenuAvaliarBanda() },
+    { 5, new MenuAvaliarAlbum() },
+    { 6, new MenuExibirDetalhes() },
+    { -1, new MenuSair() }
+};
 
-            Band ira = new("Ira!");
-            ira.AdicionarNota(new Evaluation(10));
-            ira.AdicionarNota(new Evaluation(4));
-            ira.AdicionarNota(new Evaluation(7));
-
-            bandasRegistradas.Add(ira.Name, ira);
-
-            void ExibirLogo()
-            {
-                Console.WriteLine(@"
+void ExibirLogo()
+{
+    Console.WriteLine(@"
     ██╗░░██╗░█████╗░██████╗░███╗░░░███╗░█████╗░███╗░░██╗██╗░░░██╗░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░░██████╗
     ██║░░██║██╔══██╗██╔══██╗████╗░████║██╔══██╗████╗░██║╚██╗░██╔╝██╔════╝██╔══██╗██║░░░██║████╗░██║██╔══██╗██╔════╝
     ███████║███████║██████╔╝██╔████╔██║██║░░██║██╔██╗██║░╚████╔╝░╚█████╗░██║░░██║██║░░░██║██╔██╗██║██║░░██║╚█████╗░
@@ -27,57 +33,31 @@ namespace HarmonySounds.Menus
     ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░╚════╝░╚═╝░░╚══╝░░░╚═╝░░░╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░╚═════╝
         
 ");
-                Console.WriteLine("Welcome to HARMONYSOUNDS!");
-            }
-
-            void ExibirOpcoesDoMenu()
-            {
-                ExibirLogo();
-                Console.WriteLine("\nDigite 1 para registrar uma banda");
-                Console.WriteLine("Digite 2 para registrar o álbum de uma banda");
-                Console.WriteLine("Digite 3 para mostrar todas as bandas");
-                Console.WriteLine("Digite 4 para avaliar uma banda");
-                Console.WriteLine("Digite 5 para exibir os detalhes de uma banda");
-                Console.WriteLine("Digite -1 para sair");
-
-                Console.Write("\nDigite a sua opção: ");
-                string opcaoEscolhida = Console.ReadLine()!;
-                if(!int.TryParse(opcaoEscolhida, NumberStyles.Integer, CultureInfo.InvariantCulture, out var opcaoEscolhidaNumerica))
-                {
-                    Console.WriteLine("Opção inválida");
-                    Console.Clear();
-                    ExibirOpcoesDoMenu();
-                    return;
-                }
-                Menu menu;
-                switch (opcaoEscolhidaNumerica)
-                {
-                    case 1:
-                        menu = new MenuRegistrarBanda();
-                        break;
-                    case 2:
-                        menu = new MenuMostrarBandasResgistradas();
-                        break;
-                    case 3:
-                        menu = new MenuRegistrarAlbum();
-                        break;
-                    case 4:
-                        menu = new MenuAvaliarBanda();
-                        break;
-                    case 5:
-                        menu = new MenuExibirDetalhes();
-                        break;
-                    case -1:
-                        Console.WriteLine("Você escolheu sair.");
-                        return;
-                    default:
-                        Console.WriteLine("Opção inválida");
-                        return;
-                }
-                menu.Executar(bandasRegistradas);
-                ExibirOpcoesDoMenu();
-            }
-            ExibirOpcoesDoMenu();
-        }
-    }
+    Console.WriteLine("Welcome to HARMONYSOUNDS!");
 }
+
+void ExibirOpcoesDoMenu()
+{
+    ExibirLogo();
+    Console.WriteLine("\nDigite 1 para registrar uma banda");
+    Console.WriteLine("Digite 2 para registrar o álbum de uma banda");
+    Console.WriteLine("Digite 3 para mostrar todas as bandas");
+    Console.WriteLine("Digite 4 para avaliar uma banda");
+    Console.WriteLine("Digite 5 para avaliar um album");
+    Console.WriteLine("Digite 6 para exibir os detalhes");
+
+    Console.WriteLine("Digite -1 para sair");
+
+    Console.Write("\nDigite a sua opção: ");
+    string opcaoEscolhida = Console.ReadLine()!;
+    int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
+
+    if (opcoes.TryGetValue(opcaoEscolhidaNumerica, out Menu? menuASerExibido))
+    {
+        menuASerExibido.Executar(bandasRegistradas);
+        if (opcaoEscolhidaNumerica > 0) ExibirOpcoesDoMenu();
+    }
+
+    ExibirOpcoesDoMenu();
+}
+ExibirOpcoesDoMenu();

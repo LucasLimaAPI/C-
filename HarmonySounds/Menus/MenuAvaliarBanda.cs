@@ -6,7 +6,7 @@ namespace HarmonySounds.Menus
     {
         public override void Executar(Dictionary<string, Band> bandasRegistradas)
         {
-            Console.Clear();
+            base.Executar(bandasRegistradas);
             ExibirTituloDaOpcao("Avaliar uma banda");
             Console.Write("Digite o nome da banda que deseja avaliar: ");
             string nomeDaBanda = Console.ReadLine()!;
