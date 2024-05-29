@@ -10,31 +10,29 @@ namespace HarmonySounds.Menus
             ExibirTituloDaOpcao("Exibir detalhes da banda");
             Console.Write("Digite o nome da banda que deseja conhecer melhor: ");
             string nomeDaBanda = Console.ReadLine()!;
-            
+
             if (bandasRegistradas.TryGetValue(nomeDaBanda, out Band? value))
             {
                 Band banda = value;
-                List<Evaluation> notasDaBanda = banda.Notas; // Assuming Notas is the property containing the list of evaluations
-                if (notasDaBanda != null && notasDaBanda.Count > 0)
+                System.Console.WriteLine($"\n A média da banda {nomeDaBanda} é {banda.Media}");
+                System.Console.WriteLine("\n Discorgrafia:");
+                foreach (Album album in banda.Albuns)
                 {
-                    double mediaDasNotas = notasDaBanda.Average(e => e.Note);
-                    Console.WriteLine($"\nA média da banda {nomeDaBanda} é {mediaDasNotas:F2}.");
+                    System.Console.WriteLine($"{album.Name} -> {album.Media}");
                 }
-                else
-                {
-                    Console.WriteLine($"A banda {nomeDaBanda} não tem notas registradas ainda.");
-                }
-                Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+                System.Console.WriteLine("Digite uam tecla para voltar ao menu principal");
+
                 Console.ReadKey();
                 Console.Clear();
             }
             else
             {
-                Console.WriteLine($"\nA banda {nomeDaBanda} não foi encontrada!");
-                Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+                System.Console.WriteLine($"\n A banda {nomeDaBanda} Não foi encontrada.");
+                System.Console.WriteLine("Digite uma tecla para voltar ao menu principal");
                 Console.ReadKey();
                 Console.Clear();
             }
+
         }
     }
 }
