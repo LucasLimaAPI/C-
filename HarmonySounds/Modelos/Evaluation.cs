@@ -1,18 +1,16 @@
 namespace HarmonySounds.Modelos;
 
-internal class Evaluation
+internal readonly struct Evaluation(int note)
 {
-    public Evaluation(int note)
-    {
-        Note = note;
-    }
+    public int Note { get; } = note;
 
-    public int Note {get;}
-
-    public static Evaluation Parse(String  text)
+    public static Evaluation Parse(string text)
     {
-        int nota = int.Parse(text);
-        return new Evaluation(nota);
+        if(!int.TryParse(text, out var note))
+        {
+            return new(0);
+        }
+        return new Evaluation(note);
     }
 }
 

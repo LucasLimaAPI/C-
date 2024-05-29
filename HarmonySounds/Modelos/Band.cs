@@ -1,17 +1,12 @@
 namespace HarmonySounds.Modelos
 {
-    internal class Band : IAvaliavel
+    internal class Band(string name) : IAvaliavel
     {
         private readonly List<Album> albuns = new();
         private readonly List<Evaluation> notes = new();
 
-        public Band(string name)
-        {
-            Name = name;
-        }
+        public string Name { get; } = name;
 
-        public string Name { get; }
-        
         public double Media
         {
             get

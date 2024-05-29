@@ -1,15 +1,9 @@
 namespace HarmonySounds.Modelos;
 
-internal class Music
+internal class Music(Band artist, string name)
 {
-    public Music(Band artist, string name)
-    {
-        Artist = artist;
-        Name = name;
-    }
-
-    public string Name { get; }
-    public Band Artist { get; }
+    public string Name { get; } = name;
+    public Band Artist { get; } = artist;
     public int Duration { get; set; }
     public bool Available { get; set; }
     public string DescriptionResum => $"A música {Name} pertence à banda {Artist}";
