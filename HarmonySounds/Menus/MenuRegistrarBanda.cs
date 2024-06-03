@@ -13,7 +13,7 @@ using OpenAI_API;
         Band banda = new Band(nomeDaBanda);
         bandasRegistradas.Add(nomeDaBanda, banda);
 
-        var client = new OpenAIAPI("sk-proj-2SqGTOb2NZYAJwhxeO4BT3BlbkFJdbb3xMNhdlifkhyxpesi");// insira sua chave aqui
+        var client = new OpenAIAPI("Security Key");// insira sua chave aqui
         var chat = client.Chat.CreateConversation();
         chat.AppendSystemMessage($"Resuma a banda {nomeDaBanda} em 1 parágrafo. Adote um estilo informal");
         var resposta = chat.GetResponseFromChatbotAsync().GetAwaiter().GetResult();
