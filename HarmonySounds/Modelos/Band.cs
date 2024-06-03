@@ -7,6 +7,8 @@ namespace HarmonySounds.Modelos
 
         public string Name { get; } = name;
 
+        public string? Resumo { get; set; }
+
         public double Media
         {
             get

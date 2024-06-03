@@ -13,3 +13,17 @@ C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\refint\Harmo
 C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.pdb
 C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\HarmonySounds.genruntimeconfig.cache
 C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\Release\net8.0\ref\HarmonySounds.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.Http.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\Newtonsoft.Json.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\bin\release\net8.0\OpenAI_API.dll
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\release\net8.0\HarmonySounds.csproj.AssemblyReference.cache
+C:\Users\lucas.oliveira\Desktop\C-\HarmonySounds\obj\release\net8.0\HarmonyS.0C8DAF45.Up2Date

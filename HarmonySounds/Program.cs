@@ -2,7 +2,9 @@
 using HarmonySounds.Menus;
 using HarmonySounds.Modelos;
 
+
 Dictionary<string, Band> bandasRegistradas = [];
+
 
 Band ira = new("Ira!");
 ira.AdicionarNota(new Evaluation(10));
