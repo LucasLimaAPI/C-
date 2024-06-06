@@ -11,9 +11,13 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("HarmonySounds")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cde9786b9bbb2ec789889967e3a3900af7e6193b")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8e720dfa5a58b46a172bead9e6b990649e03096")]
+>>>>>>> f1ae5b2e90997817d815185dcce0049dfca5cf69
 [assembly: System.Reflection.AssemblyProductAttribute("HarmonySounds")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HarmonySounds")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
