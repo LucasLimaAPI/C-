@@ -25,7 +25,15 @@ using (HttpClient client = new()) //Aqui vamos dar um request nos dados fornecid
         musicasPreferidasDoLucas.AdicionarMusicasFavoritas(musicas[1444]);
         musicasPreferidasDoLucas.AdicionarMusicasFavoritas(musicas[22]);
 
+        var musicasPreferidasDoFelipe = new MusicasPreferidas("Felipe");
+        musicasPreferidasDoFelipe.AdicionarMusicasFavoritas(musicas[3]);
+        musicasPreferidasDoFelipe.AdicionarMusicasFavoritas(musicas[100]);
+        musicasPreferidasDoFelipe.AdicionarMusicasFavoritas(musicas[203]);
+        musicasPreferidasDoFelipe.AdicionarMusicasFavoritas(musicas[306]);
+        musicasPreferidasDoFelipe.AdicionarMusicasFavoritas(musicas[1123]);
+
         musicasPreferidasDoLucas.ExibirMusicasFavoritas();
+        musicasPreferidasDoFelipe.ExibirMusicasFavoritas();
 
 
     }

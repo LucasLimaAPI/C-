@@ -27,6 +27,7 @@ internal class MusicasPreferidas
         {
             System.Console.WriteLine($"-{musica.Nome} de {musica.Artista}");
         }
+        System.Console.WriteLine();
 
     }
 
