@@ -1,5 +1,6 @@
 ﻿//Using vai utilizar apenas a parte em chaves do nosso código.
 using System.Text.Json;
+using HarmonySounds_API;
 using HarmonySounds_API.Filtros;
 using HarmonySounds_API.Modelos;
 
@@ -15,7 +16,18 @@ using (HttpClient client = new()) //Aqui vamos dar um request nos dados fornecid
         //LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
         //LinqOrder.ExibirListaDeArtistasOrdenadas(musicas);
         //LinqFilter.FiltrarArtistaPorGeneroMusical(musicas,"rock");
-        LinqFilter.FiltrarMusicasDeUmArtista(musicas, "U2");
+        //LinqFilter.FiltrarMusicasDeUmArtista(musicas, "U2");
+        
+        var musicasPreferidasDoLucas = new MusicasPreferidas("Lucas");
+        musicasPreferidasDoLucas.AdicionarMusicasFavoritas(musicas[1]);
+        musicasPreferidasDoLucas.AdicionarMusicasFavoritas(musicas[355]);
+        musicasPreferidasDoLucas.AdicionarMusicasFavoritas(musicas[231]);
+        musicasPreferidasDoLucas.AdicionarMusicasFavoritas(musicas[1444]);
+        musicasPreferidasDoLucas.AdicionarMusicasFavoritas(musicas[22]);
+
+        musicasPreferidasDoLucas.ExibirMusicasFavoritas();
+
+
     }
     catch (Exception ex)
     {
