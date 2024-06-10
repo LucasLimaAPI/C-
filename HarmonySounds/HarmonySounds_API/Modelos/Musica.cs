@@ -4,8 +4,9 @@ namespace HarmonySounds_API.Modelos;
 
 internal class Musica
 {
-
+    
     private readonly string[] tonalidades = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
+
     //Serializar os campos escritos abaixo
     [JsonPropertyName("song")]//Conhecido como anotação, ou @ no java.
     public required string Nome { get; set; }
